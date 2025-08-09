@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Data files & Databases
+data/
+*.csv
+*.db
+*.sqlite3
+*.duckdb
+
+# Docker
+.dockerignore
+
+# Environment variables
+.env
+
+# IDE and OS specific
+.idea/
+.vscode/
+.DS_Store
+
+# Log files
+logs/
+*.log
