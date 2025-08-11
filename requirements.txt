@@ -1,0 +1,16 @@
+# Scraping & Web
+requests
+selenium
+playwright
+fake-useragent
+
+# Data & Analysis
+pandas
+duckdb
+sqlalchemy
+
+# Utilities
+python-dotenv
+
+# Testing
+pytest

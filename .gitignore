@@ -13,6 +13,7 @@ data/
 *.db
 *.sqlite3
 *.duckdb
+signals_to_track.csv
 
 # Docker
 .dockerignore
