@@ -39,9 +39,18 @@ At its heart, the platform provides an **interactive, real-time monitoring dashb
 
 ---
 
-## Live Data & Integration
-The platform ingests **live trading data** from **mql5.com** public signals to ensure models always work on fresh, relevant market data.  
-Its modular design allows easy integration with your proprietary trading history.
+
+## Data Source & Our Approach to "Live" Data
+
+In an ideal production environment, this platform would connect directly to a brokerage's live data feed or trade database. However, for this public demonstration, we needed a reliable source of real-world trading data.
+
+To solve this, we implemented a sophisticated **web scraping module** that sources data from public signals on [mql5.com](https://www.mql5.com). To ensure data freshness while respecting the site's infrastructure and avoiding detection, the scraper is designed to run periodically (e.g., every few hours), mimicking human behavior. This approach provides a **near-live stream of data** for analysis.
+
+This platform is **built for your data**. The architecture is intentionally modular to allow for seamless integration with your proprietary trading records. By modifying the scraper module, you can easily connect your own data sources. As long as the data is written to the database following the project's standard schema, the entire analysis and visualization pipeline will function automatically with your internal data.
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+<!-- AI-assisted generation disclosure -->
+> **Note:** The text and documentation in this section were generated with assistance from a generative AI tool. The intention was to efficiently articulate the data sourcing strategy primarily for demonstration purposes. All content has been carefully reviewed by the developer and adjusted for accuracy and clarity, and the underlying technical logic was fully authored mensch-style.
+
 
 **To connect your own data source:**
 1. Modify the `scraper` module to read from your internal DB/API.
@@ -90,9 +99,24 @@ Its modular design allows easy integration with your proprietary trading history
 
 ---
 
-## داده‌های زنده و یکپارچه‌سازی
-پلتفرم از داده‌های زنده سایت **mql5.com** (سیگنال‌های عمومی) استفاده می‌کند تا همیشه بر اساس آخرین تغییرات بازار کار کند.  
-معماری ماژولار آن امکان اتصال آسان به منابع داده اختصاصی شما را نیز فراهم می‌کند.
+
+## منبع داده و رویکرد ما به داده‌های زنده
+
+در یک محیط تولیدی ایده‌آل، این پلتفرم باید مستقیماً به فید داده زنده یا پایگاه داده معاملات یک بروکر متصل شود. با این حال، برای این نسخه نمایشی عمومی، ما به یک منبع قابل اعتماد از داده‌های معاملاتی واقعی نیاز داشتیم.
+
+برای حل این مشکل، ما یک ماژول **وب اسکرپینگ پیشرفته** پیاده‌سازی کردیم که داده‌ها را از سیگنال‌های عمومی سایت [mql5.com](https://www.mql5.com) استخراج می‌کند. برای تضمین تازگی داده‌ها و در عین حال احترام به زیرساخت سایت و جلوگیری از شناسایی شدن، اسکرپر طوری طراحی شده که به صورت دوره‌ای (مثلاً هر چند ساعت یک بار) اجرا شود و **رفتار انسان را شبیه‌سازی** کند. این رویکرد یک جریان داده تقریباً زنده را برای تحلیل فراهم می‌کند.
+
+این پلتفرم **برای داده‌های شما ساخته شده** است. معماری آن به صورت کاملاً ماژولار طراحی شده تا امکان یکپارچه‌سازی آسان با سوابق معاملاتی اختصاصی شما را فراهم کند. با تغییر دادن ماژول scraper، شما می‌توانید به راحتی منابع داده داخلی خود را به سیستم متصل کنید. تا زمانی که داده‌ها طبق اسکیمای استاندارد پروژه در پایگاه داده نوشته شوند، کل خط لوله تحلیل و بصری‌سازی به صورت خودکار با داده‌های شما کار خواهد کرد.
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+<!-- افشای تولید با کمک هوش مصنوعی -->
+> **توجه:**  
+> متن و مستندات این بخش با کمک یک ابزار تولید محتوا مبتنی بر هوش مصنوعی ایجاد شده‌اند.  
+> هدف اصلی، بیان کارآمد و سریع استراتژی استخراج داده‌ها به منظور ارائه نسخه نمایشی بوده است.  
+> تمامی محتوا با دقت توسط توسعه‌دهنده بازبینی و اصلاح شده تا از صحت و وضوح آن اطمینان حاصل شود،  
+> و منطق فنی زیربنایی به صورت کامل به سبک انسانی نوشته شده است.
+
+
+
 
 **برای اتصال منبع داده خود:**
 1. ماژول `scraper` را برای خواندن داده از پایگاه داده یا API داخلی خود تغییر دهید.
