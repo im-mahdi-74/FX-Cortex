@@ -1,0 +1,13 @@
+# ==============================================================================
+# Scheduled job to run the full data pipeline (Scrape + ETL)
+# It runs at the start of major market sessions (UTC).
+# ==============================================================================
+
+# At the start of Tokyo (00:00), London (08:00), and New York (13:00) sessions on weekdays (Mon-Fri)
+0 0,8,13 * * 1-5 /bin/sh -c 'python /app/src/scraper/scraper.py && python /app/src/analysis/etl_processor.py' >> /app/logs/scheduled_run.log 2>&1
+
+# At the start of the Sydney session (22:00) from Sunday to Thursday evening
+0 22 * * 0-4 /bin/sh -c 'python /app/src/scraper/scraper.py && python /app/src/analysis/etl_processor.py' >> /app/logs/scheduled_run.log 2>&1
+
+# NOTE: An empty line at the end of this file is required for cron to work reliably.
+

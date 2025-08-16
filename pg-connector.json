@@ -1,0 +1,15 @@
+{
+    "name": "trader-trades-connector",
+    "config": {
+      "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+      "topic.prefix": "fx-cortex",
+      "database.hostname": "db",
+      "database.port": "5432",
+      "database.user": "trader",
+      "database.password": "ABSD1234",
+      "database.dbname": "forex_data",
+      "table.include.list": "raw_data.trades,raw_data.traders",
+      "plugin.name": "pgoutput"
+    }
+  }
+  
